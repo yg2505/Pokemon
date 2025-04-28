@@ -1,0 +1,104 @@
+.header {
+  text-align: center; 
+  font-size: 32px;
+  font-weight: bold;
+  padding: 20px;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  background: linear-gradient(to right ,  #8B0000 0%, #FF4500 100%);
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 10px;
+  flex-wrap: wrap;
+}
+
+.search-input, .type-dropdown {
+  padding: 12px;
+  border: 1px solid black;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.loading, .error, .empty-state {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 50px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background: linear-gradient(to right, #8B0000 0%, #FF4500 100%);
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: rgb(243, 215, 9); 
+  border-radius: 16px;
+}
+
+
+.card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.card h1 {
+  font-size: 20px;
+  text-transform: capitalize;
+  margin: 10px 0;
+}
+
+.card div {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.card .type {
+  background-color: #eee;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 40px 20px;  
+    height: auto;  
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 30px 15px;  
+    height: auto;  
+  }
+}
+
+@media (max-width: 600px) {
+  .search-input, .type-dropdown {
+    width: 100%; / 
+  }
+}
+
