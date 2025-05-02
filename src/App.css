@@ -1,42 +1,55 @@
+/* Header */
 .header {
-  text-align: center; 
+  text-align: center;
   font-size: 32px;
   font-weight: bold;
   padding: 20px;
   color: white;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-  background: linear-gradient(to right ,  #8B0000 0%, #FF4500 100%);
+  background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);;
 }
 
+/* Control Panel */
 .controls {
   display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin: 10px;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px;
+  background-color:linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+  border-top: 2px solid white
 }
 
-.search-input, .type-dropdown {
-  padding: 12px;
-  border: 1px solid black;
+.search-input,
+.type-dropdown,
+.type-dropdown select {
+  padding: 10px 14px;
   border-radius: 8px;
   font-size: 16px;
+  border: 1px solid #ccc;
+  min-width: 160px;
 }
 
-.loading, .error, .empty-state {
+/* Loading, Error, Empty States */
+.loading,
+.error,
+.empty-state {
   text-align: center;
-  font-size: 24px;
-  margin-top: 50px;
+  font-size: 20px;
+  padding: 40px 0;
+  color: #333;
 }
 
+/* Card Container */
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
   padding: 20px;
-  background: linear-gradient(to right, #8B0000 0%, #FF4500 100%);
+  background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
 }
 
+/* Pokémon Card */
 .card {
   background: white;
   border-radius: 12px;
@@ -48,11 +61,10 @@
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  background-color: rgb(243, 215, 9); 
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  background-color: #f7e869;
   border-radius: 16px;
 }
-
 
 .card img {
   width: 100px;
@@ -61,6 +73,11 @@
   margin-bottom: 10px;
 }
 
+.card h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
 .card h1 {
   font-size: 20px;
   text-transform: capitalize;
@@ -82,23 +99,49 @@
   text-transform: capitalize;
 }
 
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 8px 14px;
+  font-size: 14px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.pagination .active {
+  background-color: #ff4500;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+ 
 @media (max-width: 768px) {
   .header {
-    padding: 40px 20px;  
-    height: auto;  
+    font-size: 24px;
+    padding: 30px 20px;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-input,
+  .type-dropdown {
+    width: 100%;
+  }
+
+  .type-filters .dropdown-menu {
+    min-width: 100%;
   }
 }
-
-@media (max-width: 480px) {
-  .header {
-    padding: 30px 15px;  
-    height: auto;  
-  }
-}
-
-@media (max-width: 600px) {
-  .search-input, .type-dropdown {
-    width: 100%; / 
-  }
-}
-

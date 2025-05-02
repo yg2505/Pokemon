@@ -1,0 +1,21 @@
+.favorite-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: gold;
+}
+
+.favorite-button.active {
+  color: gold;
+}
+
+.card {
+  position: relative;  
+}
+ 
+ .card:hover .favorite-button {
+  color: hotpink};
