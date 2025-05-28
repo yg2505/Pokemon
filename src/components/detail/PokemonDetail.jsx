@@ -30,7 +30,7 @@ const PokemonDetail = ({ pokemonName, onBack }) => {
   }, [pokemonName]);
 
   if (loading) return <Loader />;
-  if (!pokemon) return <div>Error loading Pokémon data.</div>;
+  if (!pokemon) return <div style={{ display: "none" }}>Error loading Pokémon data.</div>;
 
   const renderEvolution = (chain) => {
       if (!chain) return [];

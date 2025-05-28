@@ -5,7 +5,7 @@ const usePokemonList = () => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setLoading] = useState(true);
-
+ 
   useEffect(() => {
     let cancelled = false;
     const fetchData = async () => {
