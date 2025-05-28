@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "./detail.css"
-import Loader from '../loader/loader';
+import Loader from '../loader/loader.jsx';
 
 const PokemonDetail = ({ pokemonName, onBack }) => {
   const [pokemon, setPokemon] = useState(null);
@@ -31,6 +31,22 @@ const PokemonDetail = ({ pokemonName, onBack }) => {
 
   if (loading) return <Loader />;
   if (!pokemon) return <div>Error loading Pokémon data.</div>;
+
+  const renderEvolution = (chain) => {
+      if (!chain) return [];
+    
+      const current = <span key={chain.species.name}>{chain.species.name}</span>;
+    
+      if (chain.evolves_to.length > 0) {
+        return [
+          current,
+          <span key={`${chain.species.name}-arrow`} className="arrow">➜</span>,
+          ...renderEvolution(chain.evolves_to[0]),
+        ];
+      }
+    
+      return [current];
+    };
 
   return (
     <div className="pokemon-detail">
@@ -66,21 +82,7 @@ const PokemonDetail = ({ pokemonName, onBack }) => {
   );
 };
 
-const renderEvolution = (chain) => {
-    if (!chain) return [];
-  
-    const current = <span key={chain.species.name}>{chain.species.name}</span>;
-  
-    if (chain.evolves_to.length > 0) {
-      return [
-        current,
-        <span key={`${chain.species.name}-arrow`} className="arrow">➜</span>,
-        ...renderEvolution(chain.evolves_to[0]),
-      ];
-    }
-  
-    return [current];
-  };
+
   
    
 
